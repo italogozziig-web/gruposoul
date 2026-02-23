@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicitação de Exclusão de Dados</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+    color: #d93025;
+}
+
+h2 {
+    color: #1a73e8;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #d93025;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Solicitação de Exclusão de Dados</h1>
+
+<p>Última atualização: <span id="data"></span></p>
+
+<h2>1. Direito do Titular</h2>
+<p>Em conformidade com a Lei Geral de Proteção de Dados (LGPD), o titular pode solicitar a exclusão de seus dados pessoais armazenados em nosso sistema.</p>
+
+<h2>2. Como Solicitar</h2>
+<p>Para solicitar a exclusão de seus dados, envie um e-mail para:</p>
+
+<p><strong>contato@gruposoul.online</strong></p>
+
+<p>No e-mail, informe:</p>
+<ul>
+<li>Nome completo</li>
+<li>Número de telefone cadastrado</li>
+<li>Descrição da solicitação</li>
+</ul>
+
+<h2>3. Prazo de Atendimento</h2>
+<p>A solicitação será analisada e respondida em até 15 dias corridos.</p>
+
+<h2>4. Observações Importantes</h2>
+<p>Alguns dados poderão ser mantidos quando necessário para cumprimento de obrigação legal ou regulatória.</p>
+
+<br>
+<button onclick="voltar()">Voltar</button>
+
+<div class="footer">
+<p>© <span id="ano"></span> Grupo Soul - Todos os direitos reservados.</p>
+</div>
+
+</div>
+
+<script>
+document.getElementById("data").innerText = new Date().toLocaleDateString("pt-BR");
+document.getElementById("ano").innerText = new Date().getFullYear();
+
+function voltar(){
+    window.history.back();
+}
+</script>
+
+</body>
+</html>
