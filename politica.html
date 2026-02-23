@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+h1, h2 {
+    color: #1a73e8;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #1a73e8;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Política de Privacidade</h1>
+
+<p>Última atualização: <span id="data"></span></p>
+
+<h2>1. Coleta de Dados</h2>
+<p>Coletamos dados como nome, telefone, informações trabalhistas e demais dados necessários para a prestação dos serviços oferecidos pela empresa.</p>
+
+<h2>2. Uso das Informações</h2>
+<p>Os dados coletados são utilizados para:</p>
+<ul>
+<li>Disponibilização de holerites</li>
+<li>Gestão de ponto eletrônico</li>
+<li>Assinatura de documentos internos</li>
+<li>Envio de notificações via WhatsApp Business</li>
+</ul>
+
+<h2>3. Uso do WhatsApp Business</h2>
+<p>Utilizamos a API oficial do WhatsApp Business fornecida pela Meta Platforms, Inc. para envio de notificações transacionais aos colaboradores. Nenhuma mensagem promocional é enviada sem consentimento.</p>
+
+<h2>4. Compartilhamento de Dados</h2>
+<p>Não compartilhamos dados pessoais com terceiros, exceto quando necessário para cumprimento de obrigação legal ou determinação judicial.</p>
+
+<h2>5. Segurança</h2>
+<p>Adotamos medidas técnicas e organizacionais para proteger os dados contra acessos não autorizados.</p>
+
+<h2>6. Direitos do Usuário</h2>
+<p>O titular dos dados pode solicitar acesso, correção ou exclusão de seus dados através do contato oficial da empresa.</p>
+
+<h2>7. Contato</h2>
+<p>Para dúvidas sobre esta política, entre em contato com a empresa responsável.</p>
+
+<br>
+<button onclick="voltar()">Voltar</button>
+
+</div>
+
+<script>
+document.getElementById("data").innerText = new Date().toLocaleDateString("pt-BR");
+
+function voltar(){
+    window.history.back();
+}
+</script>
+
+</body>
+</html>
