@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termos de Uso</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+h1, h2 {
+    color: #0f9d58;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #0f9d58;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Termos de Uso</h1>
+
+<p>Última atualização: <span id="data"></span></p>
+
+<h2>1. Aceitação dos Termos</h2>
+<p>Ao utilizar este sistema, o usuário concorda com os presentes Termos de Uso.</p>
+
+<h2>2. Descrição do Serviço</h2>
+<p>O sistema disponibiliza acesso a holerites, controle de ponto eletrônico, assinatura de documentos e notificações via WhatsApp Business.</p>
+
+<h2>3. Responsabilidades do Usuário</h2>
+<p>O usuário compromete-se a fornecer informações verdadeiras e manter a confidencialidade de suas credenciais.</p>
+
+<h2>4. Comunicação via WhatsApp</h2>
+<p>As notificações enviadas via WhatsApp são exclusivamente para fins administrativos e internos, não sendo utilizadas para marketing ou publicidade.</p>
+
+<h2>5. Limitação de Responsabilidade</h2>
+<p>A empresa não se responsabiliza por falhas decorrentes de indisponibilidade temporária de serviços externos.</p>
+
+<h2>6. Alterações</h2>
+<p>Estes termos podem ser atualizados a qualquer momento, sendo responsabilidade do usuário consultá-los periodicamente.</p>
+
+<br>
+<button onclick="voltar()">Voltar</button>
+
+</div>
+
+<script>
+document.getElementById("data").innerText = new Date().toLocaleDateString("pt-BR");
+
+function voltar(){
+    window.history.back();
+}
+</script>
+
+</body>
+</html>
