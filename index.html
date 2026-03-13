@@ -1,23 +1,328 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Grupo Soul</title>
-    <script>
-      // Redirecionamento imediato via JavaScript
-      window.location.replace("https://script.google.com/a/macros/gruposoulbr.com/s/AKfycbx4Xe01CN6ezz6qK0uQXkEOn9JMcXxVzrmlBGuylqF18VZaTdznHm3IvbSYpAf69zaP/exec");
-    </script>0
-    <noscript>
-      <meta http-equiv="refresh" content="0; url="https://script.google.com/a/macros/gruposoulbr.com/s/AKfycbx4Xe01CN6ezz6qK0uQXkEOn9JMcXxVzrmlBGuylqF18VZaTdznHm3IvbSYpAf69zaP/exec" />
-    </noscript>
-  </head>
-  <body>
-    Redirecionando para conexão segura da Soul...
-    <p>
-      Se não for redirecionado automaticamente,
-      <a href="https://script.google.com/a/macros/gruposoulbr.com/s/AKfycbx4Xe01CN6ezz6qK0uQXkEOn9JMcXxVzrmlBGuylqF18VZaTdznHm3IvbSYpAf69zaP/exec">
-        clique aqui
-      </a>.
-    </p>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Grupo Soul</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" href="https://gozgames.neocities.org/Si%CC%81mbolo%20-%20fundo%20azul.png" type="image/png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* === RESET E VARIÁVEIS === */
+    :root {
+      --cor-fundo-start: #001529;
+      --cor-fundo-end: #002347;
+      --cor-card-bg: rgba(255, 255, 255, 0.03);
+      --cor-card-border: rgba(255, 255, 255, 0.1);
+      --cor-texto: #ffffff;
+      
+      /* Cores dos Módulos */
+      --cor-destaque-rh: #00d2ff;    /* Azul Cyan */
+      --cor-destaque-fin: #00ff88;   /* Verde Neon */
+      --cor-destaque-sign: #d946ef;  /* Roxo/Magenta Neon */
+      
+      --shadow-card: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at center, var(--cor-fundo-end) 0%, var(--cor-fundo-start) 100%);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--cor-texto);
+      overflow: hidden; /* Remove barra de rolagem da página inteira */
+      position: relative;
+    }
+
+    /* Efeito de fundo sutil (partículas) */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.1;
+      animation: rotate 100s linear infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    /* === CONTEÚDO PRINCIPAL === */
+    .portal-container {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      width: 95%;
+      max-width: 1200px;
+      animation: fadeInUp 0.8s ease-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Permite rolagem se a tela for muito pequena na altura */
+      max-height: 95vh;
+      overflow-y: auto;
+    }
+
+    /* Scrollbar invisível para o container */
+    .portal-container::-webkit-scrollbar { display: none; }
+
+    /* Logo e Título */
+    .brand-area { margin-bottom: 50px; }
+    
+    .logo-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.1);
+      padding: 5px;
+      background: rgba(255,255,255,0.05);
+      margin-bottom: 20px;
+      box-shadow: 0 0 30px rgba(0, 35, 71, 0.8);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #fff, #a0c4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      font-size: 1.1rem;
+      color: #a6b0cf;
+      font-weight: 300;
+    }
+
+    /* === GRID DOS CARDS === */
+    .cards-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      width: 100%;
+      padding-bottom: 20px; /* Espaço para o scroll não cortar a sombra */
+    }
+
+    .system-card {
+      background: var(--cor-card-bg);
+      border: 1px solid var(--cor-card-border);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px 25px;
+      border-radius: 20px;
+      width: 300px; /* Largura fixa para ficarem iguais */
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Efeito de brilho ao passar o mouse */
+    .system-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .system-card:hover {
+      transform: translateY(-15px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow-card);
+    }
+    
+    .system-card:hover::after { opacity: 1; }
+
+    /* Ícones */
+    .card-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      transition: transform 0.4s;
+    }
+    
+    .system-card:hover .card-icon { transform: scale(1.1) rotate(5deg); }
+
+    /* Títulos dos Cards */
+    h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 10px; color: #fff; }
+    span.desc { font-size: 0.85rem; color: #cbd5e1; display: block; line-height: 1.5; }
+
+    /* --- ESTILOS ESPECÍFICOS --- */
+    
+    /* Card RH */
+    .card-rh { border-bottom: 4px solid var(--cor-destaque-rh); }
+    .card-rh .card-icon { color: var(--cor-destaque-rh); text-shadow: 0 0 20px rgba(0, 210, 255, 0.4); }
+    .card-rh:hover { border-color: var(--cor-destaque-rh); box-shadow: 0 15px 40px rgba(0, 210, 255, 0.15); }
+
+    /* Card Financeiro */
+    .card-fin { border-bottom: 4px solid var(--cor-destaque-fin); }
+    .card-fin .card-icon { color: var(--cor-destaque-fin); text-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
+    .card-fin:hover { border-color: var(--cor-destaque-fin); box-shadow: 0 15px 40px rgba(0, 255, 136, 0.15); }
+
+    /* Card Assinaturas (NOVO) */
+    .card-sign { border-bottom: 4px solid var(--cor-destaque-sign); }
+    .card-sign .card-icon { color: var(--cor-destaque-sign); text-shadow: 0 0 20px rgba(217, 70, 239, 0.4); }
+    .card-sign:hover { border-color: var(--cor-destaque-sign); box-shadow: 0 15px 40px rgba(217, 70, 239, 0.15); }
+
+    /* Rodapé */
+    .footer {
+      position: fixed; bottom: 10px;
+      font-size: 0.7rem; color: rgba(255,255,255,0.3);
+      letter-spacing: 1px;
+      z-index: 5;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    
+    .footer a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    /* Loader de Redirecionamento */
+    #redirect-overlay {
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,21,41,0.95);
+      z-index: 100;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s;
+    }
+    .spinner {
+      width: 50px; height: 50px; border: 4px solid rgba(255,255,255,0.1);
+      border-top: 4px solid #fff; border-radius: 50%;
+      animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes fadeInUp { from { opacity:0; transform: translateY(40px); } to { opacity:1; transform:translateY(0); } }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      body { height: auto; padding: 40px 0; overflow-y: auto; }
+      .portal-container { margin-top: 20px; }
+      .logo-img { width: 90px; height: 90px; }
+      h1 { font-size: 1.8rem; }
+      .system-card { width: 100%; max-width: 300px; padding: 30px; margin-bottom: 10px; }
+      .footer { position: relative; margin-top: 30px; bottom: auto; padding-bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="redirect-overlay">
+    <div class="spinner"></div>
+    <h3 style="font-weight: 400; color: #fff;">Acessando sistema...</h3>
+  </div>
+
+  <div class="portal-container">
+    
+    <div class="brand-area">
+      <img src="https://gozgames.neocities.org/Si%CC%81mbolo%20-%20fundo%20azul.png" alt="Logo Grupo Soul" class="logo-img">
+      <h1>Portal Grupo Soul</h1>
+      <p class="subtitle">Selecione o sistema que deseja acessar</p>
+    </div>
+
+    <div class="cards-grid">
+      
+      <div class="system-card card-rh" onclick="navegar('rh')">
+        <div class="card-icon">
+          <i class="fa-solid fa-users-gear"></i>
+        </div>
+        <h3>Gestão de RH</h3>
+        <span class="desc">Controle de Escalas, Admissões, Faltas e Histórico de Colaboradores.</span>
+      </div>
+
+      <div class="system-card card-fin" onclick="navegar('financeiro')">
+        <div class="card-icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <h3>Financeiro</h3>
+        <span class="desc">Contas a Pagar, Fluxo de Caixa, Relatórios e Dashboard Gerencial.</span>
+      </div>
+
+      <div class="system-card card-sign" onclick="navegar('assinaturas')">
+        <div class="card-icon">
+          <i class="fa-solid fa-file-signature"></i>
+        </div>
+        <h3>Assinaturas</h3>
+        <span class="desc">Assinatura digital de documentos, contratos e validação de escalas.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    © GRUPO SOUL • TECNOLOGIA E GESTÃO<br>
+    <span style="font-size: 0.65rem; opacity: 0.8; margin-top: 5px; display: inline-block;">
+      Desenvolvido por <a href="https://goscripts.com.br/" target="_blank">GoScripts</a>
+    </span>
+  </div>
+
+  <script>
+    // ============================================
+    // CONFIGURAÇÃO DOS LINKS - EDITE AQUI
+    // ============================================
+    const LINK_RH = "https://gruposoul.online/rh"; 
+    const LINK_FINANCEIRO = "https://gruposoul.online/financeiro";
+    const LINK_ASSINATURAS = "https://gruposoul.online/holerites"; 
+    // ============================================
+
+    function navegar(sistema) {
+      const overlay = document.getElementById('redirect-overlay');
+      const spinner = overlay.querySelector('.spinner');
+      
+      let destino = '';
+      let cor = '#fff';
+
+      if (sistema === 'rh') {
+        destino = LINK_RH;
+        cor = 'var(--cor-destaque-rh)';
+      } else if (sistema === 'financeiro') {
+        destino = LINK_FINANCEIRO;
+        cor = 'var(--cor-destaque-fin)';
+      } else if (sistema === 'assinaturas') {
+        destino = LINK_ASSINATURAS;
+        cor = 'var(--cor-destaque-sign)';
+      }
+
+      spinner.style.borderTopColor = cor;
+      overlay.style.display = 'flex';
+
+      // Pequeno delay para a animação aparecer, depois redireciona
+      setTimeout(() => {
+        // Ajustado para navegação padrão web (fora de iframe)
+        window.location.href = destino; 
+      }, 800);
+    }
+  </script>
+
+</body>
 </html>
