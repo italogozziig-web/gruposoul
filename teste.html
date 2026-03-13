@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Grupo Soul - Documentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <link rel="icon" href="https://gozgames.neocities.org/Si%CC%81mbolo%20-%20fundo%20azul.png" type="image/png">
+
+  <style>
+    /* Zera as margens e impede barra de rolagem dupla */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; 
+      background-color: #0B2545; /* Cor de fundo do seu sistema para não dar flash branco */
+    }
+
+    /* O container que faz a mágica de cortar a tarja */
+    .esconde-tarja {
+      position: absolute;
+      /* A tarja do Google tem em média 36px a 40px. Subimos a tela nessa exata medida: */
+      top: -40px; 
+      left: 0;
+      width: 100%;
+      /* Compensamos a altura para não faltar tela lá embaixo */
+      height: calc(100% + 40px); 
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="esconde-tarja">
+    <iframe src="COLE_O_LINK_DO_SEU_APP_SCRIPT_AQUI"></iframe>
+  </div>
+
+</body>
+</html>
